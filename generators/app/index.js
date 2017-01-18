@@ -45,9 +45,19 @@ module.exports = Generator.extend({
   },
 
   writing: function () {
+    this.fs.copyTpl(
+      this.templatePath('README.md'),
+      this.destinationPath('README.md'),
+      { name: this.props.name }
+    );
+    this.fs.copyTpl(
+      this.templatePath('.gitignore'),
+      this.destinationPath('.gitignore'),
+      { onlyFrontend: this.props.onlyFrontend }
+    );
     this.fs.copy(
-      this.templatePath('dummyfile.txt'),
-      this.destinationPath('dummyfile.txt')
+      this.templatePath('.jshintrc'),
+      this.destinationPath('.jshintrc')
     );
   },
 
