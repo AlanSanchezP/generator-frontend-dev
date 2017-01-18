@@ -56,8 +56,20 @@ module.exports = Generator.extend({
       { onlyFrontend: this.props.onlyFrontend }
     );
     this.fs.copy(
-      this.templatePath('.jshintrc'),
-      this.destinationPath('.jshintrc')
+      this.templatePath('js/app.js'),
+      this.destinationPath('src/js/app.js')
+    );
+    this.fs.copy(
+      this.templatePath('fonts/.gitkeep'),
+      this.destinationPath('src/fonts/.gitkeep')
+    );
+    this.fs.copy(
+      this.templatePath('img/.gitkeep'),
+      this.destinationPath('src/img/.gitkeep')
+    );
+    this.fs.copy(
+      this.templatePath('svg/.gitkeep'),
+      this.destinationPath('src/svg/.gitkeep')
     );
   },
 

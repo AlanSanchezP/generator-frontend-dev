@@ -1,4 +1,7 @@
 bower_components/
 node_modules/
 dist/
-<% if (onlyFrontend == false) { %>.publish/<% } %>
+<% if (onlyFrontend == true) { %>
+.publish/
+_templates/
+<% } %>
