@@ -36,6 +36,7 @@ module.exports = {
       img: dist + '/img/',
       fonts: dist + '/fonts/',
       html: dist + '/*.html',
+      all: dist + '/**/*',
       root: dist
     },
     bower: function (package) {

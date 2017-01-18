@@ -28,5 +28,5 @@ gulp.task('server:run', function() {
 
 gulp.task('server:reload', tasks, function() {
   gulp.src(config.paths.dist.html)
-  .pipe(connect.reload());
+    .pipe(connect.reload());
 })

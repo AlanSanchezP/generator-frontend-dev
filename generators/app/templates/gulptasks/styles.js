@@ -19,15 +19,15 @@ gulp.task('build:styles', function () {
     });
 
   return gulp.src(config.paths.src.styles_main)
-  .pipe(stylus({
-    use: [fontFactory.register, autoprefixer('last 2 versions')],
-    define: {
-      import_tree: import_tree
-    }
-  }))
-  .pipe(gulpIf(production, cssmin({processImport: false})))
-  .pipe(gulp.dest(baseDir.css))
-  .on('end', function () {
-    fontFactory.run();
-  });
+    .pipe(stylus({
+      use: [fontFactory.register, autoprefixer('last 2 versions')],
+      define: {
+        import_tree: import_tree
+      }
+    }))
+    .pipe(gulpIf(production, cssmin({processImport: false})))
+    .pipe(gulp.dest(baseDir.css))
+    .on('end', function () {
+      fontFactory.run();
+    });
 });

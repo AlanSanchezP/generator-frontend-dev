@@ -10,19 +10,19 @@ gulp.task('build:html', function () {
   var baseDir = production ? config.paths.dist : config.paths.build;
 
   return gulp.src(config.paths.src.templates_sections)
-  .pipe(data(function (file) {
-    var sectionName = file.relative.split('.njk')[0];
-    return {
-      section: sectionName
-    }
-  }))
-  .pipe(nunjucksRender({
-    path: config.paths.src.templates_dir,
-    ext: '.html',
-    inheritExtension: false,
-    manageEnv: function (environment) {
-      environment.addGlobal('projectName', package);
-    }
-  }))
-  .pipe(gulp.dest(baseDir.root));
+    .pipe(data(function (file) {
+      var sectionName = file.relative.split('.njk')[0];
+      return {
+        section: sectionName
+      }
+    }))
+    .pipe(nunjucksRender({
+      path: config.paths.src.templates_dir,
+      ext: '.html',
+      inheritExtension: false,
+      manageEnv: function (environment) {
+        environment.addGlobal('projectName', package);
+      }
+    }))
+    .pipe(gulp.dest(baseDir.root));
 });
