@@ -8,12 +8,12 @@ module.exports = Generator.extend({
   prompting: function () {
     // Have Yeoman greet the user.
     this.log(yosay(
-      'Welcome to the posh ' + chalk.red('section') + ' generator!'
+      'Welcome to the posh ' + chalk.green('section') + ' generator!'
     ));
     var prompts = [{
       type: 'input',
       name: 'name',
-      message: 'Section name. It will be lower-cased to create the file name, but remain as you write it inside the nunjucks title block.',
+      message: 'Section name. It will stay the same inside the nunjucks title block, but formatted to create the file name. \'My Section\' will be named as my_section.njk',
       default: argv.name ? argv.name : 'Contact'
     },
     {

@@ -1,13 +1,13 @@
 'use strict';
-var Generator = require('yeoman-generator');
-var chalk = require('chalk');
-var yosay = require('yosay');
+var Generator = require('yeoman-generator'),
+  chalk = require('chalk'),
+  yosay = require('yosay');
 
 module.exports = Generator.extend({
   prompting: function () {
     // Have Yeoman greet the user.
     this.log(yosay(
-      'Welcome to the posh ' + chalk.red('generator-frontend-dev') + ' generator!'
+      'Welcome to the posh ' + chalk.green('generator-frontend-dev') + ' generator!'
     ));
 
     var prompts = [{
