@@ -27,21 +27,21 @@
   "overrides": {<% if (useFontAwesome) { %>
     "font-awesome": {
       "main": [
-        "./css/font-awesome.min.css",
+        "./css/font-awesome.css",
         "./fonts/*"
       ]
     }<% if (cssFramework != 'Other') { %>,<% } %><% } %><% if (cssFramework == 'Bootstrap') { %>
     "bootstrap": {
       "main": [
-        "./dist/css/bootstrap.min.css",
-        "./dist/js/bootstrap.min.js",
+        "./dist/css/bootstrap.css",
+        "./dist/js/bootstrap.js",
         "./dist/fonts/*"
       ]
     }<% } else if (cssFramework == 'Foundation') { %>
     "foundation-sites": {
       "main": [
-        "./dist/css/foundation.min.css",
-        "./dist/js/foundation.min.js"
+        "./dist/css/foundation.css",
+        "./dist/js/foundation.js"
       ]
     }<% } else if (cssFramework == 'Pure.css') { %>
     "pure": {
