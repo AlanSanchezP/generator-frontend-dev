@@ -79,6 +79,18 @@ module.exports = Generator.extend({
       }
     );
     this.fs.copy(
+      this.templatePath('gulptasks/*'),
+      this.destinationPath('gulptasks/')
+    );
+    this.fs.copy(
+      this.templatePath('gulpconfig.js'),
+      this.destinationPath('gulpconfig.js')
+    );
+    this.fs.copy(
+      this.templatePath('gulpfile.js'),
+      this.destinationPath('gulpfile.js')
+    );
+    this.fs.copy(
       this.templatePath('js/app.js'),
       this.destinationPath('src/js/app.js')
     );
