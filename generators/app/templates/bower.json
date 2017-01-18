@@ -35,11 +35,7 @@
       "main": [
         "./dist/css/bootstrap.min.css",
         "./dist/js/bootstrap.min.js",
-        "./dist/fonts/glyphicons-halflings-regular.eot",
-        "./dist/fonts/glyphicons-halflings-regular.svg",
-        "./dist/fonts/glyphicons-halflings-regular.ttf",
-        "./dist/fonts/glyphicons-halflings-regular.woff",
-        "./dist/fonts/glyphicons-halflings-regular.woff2"
+        "./dist/fonts/*"
       ]
     }<% } else if (cssFramework == 'Foundation') { %>
     "foundation-sites": {
