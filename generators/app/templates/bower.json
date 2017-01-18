@@ -1,0 +1,105 @@
+{
+  "name": "<%= name %>",
+  "description": "",
+  "authors": [],
+  "license": "ISC",
+  "homepage": "",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.0",
+    "jquery-validation": "jquery-validate#^1.15.1"<% if (cssFramework == 'Bootstrap') { %>,
+    "bootstrap": "^3.3.7" <% } else if (cssFramework == 'Foundation') { %>,
+    "foundation-sites": "^6.3.0" <% } else if (cssFramework == 'Pure.css') { %>,
+    "pure": "^0.6.2" <% } %><% if (useFontAwesome) { %>,
+    "font-awesome": "fontawesome#^4.7.0"<% } %>
+  },
+  "resolutions": {
+    "jquery": "^3.1.0"
+  },
+  "overrides": {
+    <% if (useFontAwesome) { %>
+    "font-awesome": {
+      "main": [
+        "./css/font-awesome.min.css",
+        "./fonts/*"
+      ]
+    }<% if (cssFramework == 'Bootstrap') { %>,
+    "bootstrap": {
+      "main": [
+        "./dist/css/bootstrap.min.css",
+        "./dist/js/bootstrap.min.js",
+        "./dist/fonts/glyphicons-halflings-regular.eot",
+        "./dist/fonts/glyphicons-halflings-regular.svg",
+        "./dist/fonts/glyphicons-halflings-regular.ttf",
+        "./dist/fonts/glyphicons-halflings-regular.woff",
+        "./dist/fonts/glyphicons-halflings-regular.woff2"
+      ]
+    }<% } else if (cssFramework == 'Foundation') { %>,
+    "foundation-sites": {
+      "main": [
+        "./dist/css/foundation.min.css",
+        "./dist/js/foundation.min.js"
+      ]
+    }<% } else if (cssFramework == 'Pure.css') { %>,
+    "pure": {
+      "main": [
+        "./src/base/base.css",
+        "./src/buttons/css/buttons-core.css",
+        "./src/buttons/css/buttons.css",
+        "./src/forms/css/forms-r.css",
+        "./src/forms/css/forms.css",
+        "./src/grids/css/grids-core.css",
+        "./src/menus/css/menus-core.css",
+        "./src/menus/css/menus-dropdown.css",
+        "./src/menus/css/menus-horizontal.css",
+        "./src/menus/css/menus-scrollable.css",
+        "./src/menus/css/menus-skin.css",
+        "./src/tables/css/tables.css"
+      ]
+    }<% } %>
+    <% } else { %>
+      <% if (cssFramework == 'Bootstrap') { %>
+    "bootstrap": {
+      "main": [
+        "./dist/css/bootstrap.min.css",
+        "./dist/js/bootstrap.min.js",
+        "./dist/fonts/glyphicons-halflings-regular.eot",
+        "./dist/fonts/glyphicons-halflings-regular.svg",
+        "./dist/fonts/glyphicons-halflings-regular.ttf",
+        "./dist/fonts/glyphicons-halflings-regular.woff",
+        "./dist/fonts/glyphicons-halflings-regular.woff2"
+      ]
+    }<% } else if (cssFramework == 'Foundation') { %>
+    "foundation-sites": {
+      "main": [
+        "./dist/css/foundation.min.css",
+        "./dist/js/foundation.min.js"
+      ]
+    }<% } else if (cssFramework == 'Pure.css') { %>
+    "pure": {
+      "main": [
+        "./src/base/base.css",
+        "./src/buttons/css/buttons-core.css",
+        "./src/buttons/css/buttons.css",
+        "./src/forms/css/forms-r.css",
+        "./src/forms/css/forms.css",
+        "./src/grids/css/grids-core.css",
+        "./src/menus/css/menus-core.css",
+        "./src/menus/css/menus-dropdown.css",
+        "./src/menus/css/menus-horizontal.css",
+        "./src/menus/css/menus-scrollable.css",
+        "./src/menus/css/menus-skin.css",
+        "./src/tables/css/tables.css"
+      ]
+    }<% } %>
+    <% } %>
+  }
+}

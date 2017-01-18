@@ -36,6 +36,12 @@ module.exports = Generator.extend({
         }
       ],
       default: 'Bootstrap'
+    },
+    {
+      type: 'confirm',
+      name: 'useFontAwesome',
+      message: 'Do you want to use FontAwesome?',
+      default: true
     }];
 
     return this.prompt(prompts).then(function (props) {
@@ -54,6 +60,23 @@ module.exports = Generator.extend({
       this.templatePath('.gitignore'),
       this.destinationPath('.gitignore'),
       { onlyFrontend: this.props.onlyFrontend }
+    );
+    this.fs.copyTpl(
+      this.templatePath('bower.json'),
+      this.destinationPath('bower.json'),
+      {
+        name: this.props.name,
+        cssFramework: this.props.cssFramework,
+        useFontAwesome: this.props.useFontAwesome
+      }
+    );
+    this.fs.copyTpl(
+      this.templatePath('package.json'),
+      this.destinationPath('package.json'),
+      {
+        name: this.props.name,
+        onlyFrontend: this.props.onlyFrontend
+      }
     );
     this.fs.copy(
       this.templatePath('js/app.js'),
