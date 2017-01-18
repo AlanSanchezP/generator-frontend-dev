@@ -24,49 +24,13 @@
   "resolutions": {
     "jquery": "^3.1.0"
   },
-  "overrides": {
-    <% if (useFontAwesome) { %>
+  "overrides": {<% if (useFontAwesome) { %>
     "font-awesome": {
       "main": [
         "./css/font-awesome.min.css",
         "./fonts/*"
       ]
-    }<% if (cssFramework == 'Bootstrap') { %>,
-    "bootstrap": {
-      "main": [
-        "./dist/css/bootstrap.min.css",
-        "./dist/js/bootstrap.min.js",
-        "./dist/fonts/glyphicons-halflings-regular.eot",
-        "./dist/fonts/glyphicons-halflings-regular.svg",
-        "./dist/fonts/glyphicons-halflings-regular.ttf",
-        "./dist/fonts/glyphicons-halflings-regular.woff",
-        "./dist/fonts/glyphicons-halflings-regular.woff2"
-      ]
-    }<% } else if (cssFramework == 'Foundation') { %>,
-    "foundation-sites": {
-      "main": [
-        "./dist/css/foundation.min.css",
-        "./dist/js/foundation.min.js"
-      ]
-    }<% } else if (cssFramework == 'Pure.css') { %>,
-    "pure": {
-      "main": [
-        "./src/base/base.css",
-        "./src/buttons/css/buttons-core.css",
-        "./src/buttons/css/buttons.css",
-        "./src/forms/css/forms-r.css",
-        "./src/forms/css/forms.css",
-        "./src/grids/css/grids-core.css",
-        "./src/menus/css/menus-core.css",
-        "./src/menus/css/menus-dropdown.css",
-        "./src/menus/css/menus-horizontal.css",
-        "./src/menus/css/menus-scrollable.css",
-        "./src/menus/css/menus-skin.css",
-        "./src/tables/css/tables.css"
-      ]
-    }<% } %>
-    <% } else { %>
-      <% if (cssFramework == 'Bootstrap') { %>
+    }<% if (cssFramework != 'Other') { %>,<% } %><% } %><% if (cssFramework == 'Bootstrap') { %>
     "bootstrap": {
       "main": [
         "./dist/css/bootstrap.min.css",
@@ -100,6 +64,5 @@
         "./src/tables/css/tables.css"
       ]
     }<% } %>
-    <% } %>
   }
 }
