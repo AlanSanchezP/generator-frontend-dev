@@ -4,7 +4,7 @@ var gulp = require('gulp'),
 
 gulp.task('copy:fonts', function () {
   var dest = argv.production ? paths.dist.fonts : paths.build.fonts;
-  console.log(dest);
-  gulp.src(paths.src.fonts)
+
+  return gulp.src(paths.src.fonts)
     .pipe(gulp.dest(dest));
 });

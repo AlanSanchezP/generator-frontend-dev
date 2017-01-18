@@ -3,12 +3,10 @@ var gulp = require('gulp'),
   portfinder = require('portfinder'),
   connect = require('gulp-connect'),
   tasks = [
-    'build:bower',
     'build:html',
     'build:styles',
     'build:scripts',
-    'copy:fonts',
-    'copy:images'
+    'copy:fonts'
   ];
 
 portfinder.basePort = 8080;

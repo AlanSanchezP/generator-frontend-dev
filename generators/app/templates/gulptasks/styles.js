@@ -18,7 +18,7 @@ gulp.task('build:styles', function () {
       watchMode: false
     });
 
-  gulp.src(config.paths.src.styles_main)
+  return gulp.src(config.paths.src.styles_main)
   .pipe(stylus({
     use: [fontFactory.register, autoprefixer('last 2 versions')],
     define: {

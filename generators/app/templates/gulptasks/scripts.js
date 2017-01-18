@@ -10,7 +10,7 @@ var gulp = require('gulp'),
 gulp.task('build:scripts', function () {
   var baseDir = production ? config.paths.dist : config.paths.build;
 
-  gulp.src(config.paths.src.js)
+  return gulp.src(config.paths.src.scripts_all)
     .pipe(jshint('./.jshintrc'))
     .pipe(jshint.reporter('jshint-stylish'))
     .pipe(jsconcat(config.outputs.files('js')))
