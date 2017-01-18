@@ -20,13 +20,13 @@ gulp.task('server:run', function() {
   portfinder.getPort(function (err, availablePort) {
     connect.server({
       port: availablePort,
-      root: config.paths.dist.root,
+      root: config.paths.build.root,
       livereload: true
     });
   });
 });
 
 gulp.task('server:reload', tasks, function() {
-  gulp.src(config.paths.dist.html)
+  gulp.src(config.paths.build.html)
     .pipe(connect.reload());
 })
