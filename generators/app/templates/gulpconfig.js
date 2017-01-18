@@ -9,6 +9,8 @@ module.exports = {
     src: {
       styles_all: src + '/styl/**/*.styl',
       styles_main: src + '/styl/main.styl',
+      svg_files: src + '/svg/**/*.svg',
+      svg_dir: src + '/svg/',
       scripts_all: src + '/js/**/*.js',
       scripts_main: src + '/js/app.js',
       img: src + '/img/**/*.*',
