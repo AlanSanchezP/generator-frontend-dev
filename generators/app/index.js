@@ -79,6 +79,10 @@ module.exports = Generator.extend({
       }
     );
     this.fs.copy(
+      this.templatePath('.jshintrc'),
+      this.destinationPath('.jshintrc')
+    );
+    this.fs.copy(
       this.templatePath('gulptasks/*'),
       this.destinationPath('gulptasks/')
     );

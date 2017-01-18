@@ -9,7 +9,7 @@ gulp.task('copy:images', function () {
   var baseDir = production ? config.paths.dist : config.paths.build;
 
   gulp.src(config.paths.src.img)
-  .pipe(gulptIf(production, imagemin()))
+  .pipe(gulpIf(production, imagemin()))
   .pipe(gulp.dest(baseDir.img));
 
   gulp.src(config.paths.src.favicon)

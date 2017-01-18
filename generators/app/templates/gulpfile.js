@@ -24,4 +24,4 @@ gulp.task('watch', function () {
 <% if (onlyFrontend) { %>
 gulp.task('serve', ['server:run', 'server:reload']);
 <% } %>
-gulp.task('default', ['build',<% if (onlyFrontend) { %>'serve',<% } %> 'watch']);
+gulp.task('default', ['build',<% if (onlyFrontend) { %> 'serve',<% } %> 'watch']);

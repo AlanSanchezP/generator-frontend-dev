@@ -2,6 +2,8 @@ var gulp = require('gulp'),
   config = require('../gulpconfig'),
   portfinder = require('portfinder'),
   connect = require('gulp-connect'),
+  argv = require('yargs').argv,
+  production = argv.production,
   tasks = [
     'build:html',
     'build:styles',
@@ -12,6 +14,9 @@ var gulp = require('gulp'),
 portfinder.basePort = 8080;
 
 gulp.task('server:run', function() {
+  if (production) {
+    console.log('ALERT!! Webserver will look for files inside build/ directory, but the latest compiled version is inside dist/ directory. Run gulp command without --production flag.');
+  }
   portfinder.getPort(function (err, availablePort) {
     connect.server({
       port: availablePort,

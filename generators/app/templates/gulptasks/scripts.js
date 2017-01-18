@@ -14,6 +14,6 @@ gulp.task('build:scripts', function () {
     .pipe(jshint('./.jshintrc'))
     .pipe(jshint.reporter('jshint-stylish'))
     .pipe(jsconcat(config.outputs.files('js')))
-    .pipe(gulptIf(production, uglify()))
+    .pipe(gulpIf(production, uglify()))
     .pipe(gulp.dest(baseDir.js));
 });
