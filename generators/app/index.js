@@ -71,6 +71,16 @@ module.exports = Generator.extend({
       this.templatePath('svg/.gitkeep'),
       this.destinationPath('src/svg/.gitkeep')
     );
+    this.fs.copy(
+      this.templatePath('styl/**/*'),
+      this.destinationPath('src/styl/')
+    );
+    if (this.props.onlyFrontend) {
+      this.fs.copy(
+        this.templatePath('nunjucks/**/*'),
+        this.destinationPath('src/templates/')
+      );
+    }
   },
 
   install: function () {
