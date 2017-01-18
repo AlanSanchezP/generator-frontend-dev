@@ -10,7 +10,15 @@ var gulp = require('gulp'),
   production = argv.production;
 
 gulp.task('build:bower', function () {
-  var baseDir = production ? config.paths.dist : config.paths.build;
+  var baseDir = production ? config.paths.dist : config.paths.build,
+    fontExtensions = [
+      '**/*.eot',
+      '**/*.svg',
+      '**/*.ttf',
+      '**/*.woff',
+      '**/*.woff2',
+      '**/*.otf'
+    ];
 
   gulp.src(bowerFiles('**/*.css'))
     .pipe(cssconcat(config.outputs.libs('css')))
@@ -21,4 +29,7 @@ gulp.task('build:bower', function () {
     .pipe(jsconcat(config.outputs.libs('js')))
     .pipe(gulpIf(production, uglify()))
     .pipe(gulp.dest(baseDir.js));
+
+  gulp.src(bowerFiles(fontExtensions))
+    .pipe(gulp.dest(baseDir.fonts));
 });
