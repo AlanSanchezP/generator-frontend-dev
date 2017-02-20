@@ -104,7 +104,7 @@ All the tasks, with the only exception of **deploy** can take the --production f
 
 * **server:run**: Launches a localserver to serve all destination files
 
-* **server:reload**
+* **server:reload**: Reloads the localserver.
 
 * **create:cname**: Creates a CNAME file with the domain that you want to use in your page
 
@@ -114,7 +114,7 @@ All the tasks, with the only exception of **deploy** can take the --production f
 
 * **watch**: Watches all build:* tasks
 
-* **serve**: Shorcut for server:run
+* **serve**: Shorcut for server:run and server:reload
 
 * **default**: Launches build, watch and serve tasks.
 
