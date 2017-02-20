@@ -15,10 +15,11 @@
   ],
   "dependencies": {
     "jquery": "^3.1.0",
-    "jquery-validation": "jquery-validate#^1.15.1"<% if (cssFramework == 'Bootstrap') { %>,
-    "bootstrap": "^3.3.7" <% } else if (cssFramework == 'Foundation') { %>,
-    "foundation-sites": "^6.3.0" <% } else if (cssFramework == 'Pure.css') { %>,
-    "pure": "^0.6.2" <% } %><% if (useFontAwesome) { %>,
+    "jquery-validation": "jquery-validate#^1.15.1",<% if (cssFramework == 'Bootstrap') { %>
+    "bootstrap": "^3.3.7" <% } else if (cssFramework == 'Foundation') { %>
+    "foundation-sites": "^6.3.0" <% } else if (cssFramework == 'Pure.css') { %>
+    "pure": "^0.6.2" <% } else { %>
+    "normalize-css": "^5.0.0"<% } if (useFontAwesome) { %>,
     "font-awesome": "fontawesome#^4.7.0"<% } %>
   },
   "resolutions": {
