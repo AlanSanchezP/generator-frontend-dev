@@ -139,5 +139,9 @@ module.exports = Generator.extend({
         this.destinationPath('src/templates/')
       );
     }
-  }
+  }/*,
+
+  install: function () {
+    this.installDependencies();
+  }*/
 });

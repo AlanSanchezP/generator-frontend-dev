@@ -44,6 +44,7 @@ It basically uses stylus and nunjucks to help you to keep your html/css code mod
 * Minify all your images, styles, scripts and bower dependencies
 * Use your favourite css framework. Because not everyone likes to use bootstrap.
 * Upload your compiled files to gh-pages
+* Set your custom domain to gh-pages
 
 Additionally, the stylus core of this generator comes with some useful mixins and classes (more information below).
 
@@ -52,6 +53,8 @@ Additionally, the stylus core of this generator comes with some useful mixins an
 Here is a short explanation of each file and directory that is generated (excluding the obvious ones...):
 
 * **.jshintrc**: Contains the jshint settings, feel free to modify it. [Learn more about it](http://jshint.com/docs/options/)
+* **gulpfile.js**: Main gulpfile that imports single gulptasks
+* **gulpconfig.js**: Configuration file for paths and other values used in gulptasks.
 * **gulptasks/**:  A folder that contains individual files for each gulptask that is used by the main gulpfile.
 * **src/**: All the code and resources that you will create to your project.
 * **src/templates**: Nunjucks files
@@ -103,6 +106,8 @@ All the tasks, with the only exception of **deploy** can take the --production f
 
 * **server:reload**
 
+* **create:cname**: Creates a CNAME file with the domain that you want to use in your page
+
 * **deploy**: Uploads /dist folder to github pages.
 
 * **build**: Shorcut for all build:* tasks.
@@ -117,6 +122,14 @@ All the tasks, with the only exception of **deploy** can take the --production f
 
 build:styles and build:scripts taks will concatenate your files in an alphabetical order.
 
+## Gulpconfig file
+
+The gulpconfig file manages the paths that gulptasks will use to listen and create files, as well as some values such as the website domain (create:cname). Since you can look at it to see the paths values, we will explain just the last section of the file, the **etc** object.
+
+* **etc**: Contains all values that are not paths and are needed in any gulptask.
+  * **domain**: Custom (and already bought) domain for your gh-page. Its default value is '' (empty string). You can use this value, as well as false, undefined and null, to tell the cname gulptask not to create CNAME file.
+  * **projectName**: This property is used by nunjucks templates to access to the project's formatted name (lowercased and with all spaces replaced by underscores). However, this property is an alias for the package variable of the gulpconfig file. This means that if you want to change its value you'd rather change the **package**'s value, since **outputs** object also depends on this value.
+
 ## Generator options
 
 > Project name (default: directory name)
@@ -128,6 +141,7 @@ This is the name that will be used in the package.json and bower.json files. It'
 If false, the following gulptasks won't be available:
  * build:html
  * serve (both run and reload)
+ * create:cname
  * deploy
 
 Additionally, the whole src/templates directory won't be generated.
