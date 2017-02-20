@@ -26,12 +26,12 @@ if (production) {
 gulp.task('build', buildTasks);
 
 gulp.task('watch', function () {
-  gulp.watch(config.paths.bower(''), ['build:bower']);
-  gulp.watch([config.paths.src.styles_all, config.paths.src.svg_files], ['build:styles']);
-  gulp.watch(config.paths.src.scripts_all, ['build:scripts']);
-  gulp.watch(config.paths.src.fonts, ['copy:fonts']);
-  gulp.watch(config.paths.src.img, ['copy:images']);
-  gulp.watch(config.paths.src.templates_all, ['build:html']);
+  gulp.watch(config.paths.bower(''), ['build:bower', 'server:reload']);
+  gulp.watch([config.paths.src.styles_all, config.paths.src.svg_files], ['build:styles', 'server:reload']);
+  gulp.watch(config.paths.src.scripts_all, ['build:scripts', 'server:reload']);
+  gulp.watch(config.paths.src.fonts, ['copy:fonts', 'server:reload']);
+  gulp.watch(config.paths.src.img, ['copy:images', 'server:reload']);
+  gulp.watch(config.paths.src.templates_all, ['build:html', 'server:reload']);
 });
 
 gulp.task('serve', ['server:run', 'server:reload']);
