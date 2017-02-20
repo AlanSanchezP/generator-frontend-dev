@@ -28,7 +28,7 @@ module.exports = Generator.extend({
     }.bind(this));
   },
   writing: function () {
-    var filename = this.props.name.replaceAll(' ', '_').toLowerCase();
+    var filename = this.props.name.replace(/ /g, '_').toLowerCase();
 
     this.fs.copyTpl(
       this.templatePath('section.njk'),

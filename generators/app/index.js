@@ -51,6 +51,8 @@ module.exports = Generator.extend({
   },
 
   writing: function () {
+    var filename = this.props.name.replace(/ /g, '_').toLowerCase();
+
     this.fs.copyTpl(
       this.templatePath('README.md'),
       this.destinationPath('README.md'),
@@ -83,9 +85,20 @@ module.exports = Generator.extend({
       this.destinationPath('.jshintrc')
     );
     this.fs.copy(
-      this.templatePath('gulptasks/*'),
+      [
+        this.templatePath('gulptasks/*'),
+        '!gulptasks/html.js'
+      ],
       this.destinationPath('gulptasks/')
     );
+    this.fs.copyTpl(
+      this.templatePath('gulptasks/html.js'),
+      this.destinationPath('gulptasks/html.js'),
+      {
+        projectName: this.props.name,
+        projectFilesName: filename
+      }
+    )
     this.fs.copy(
       this.templatePath('gulpconfig.js'),
       this.destinationPath('gulpconfig.js')
@@ -123,9 +136,5 @@ module.exports = Generator.extend({
         this.destinationPath('src/templates/')
       );
     }
-  },
-
-  install: function () {
-    this.installDependencies();
   }
 });

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     {% block meta %}{% endblock %}
-    <link rel="stylesheet" href="css/{{ projectName }}.libs.css">
+    <link rel="stylesheet" href="css/{{ projectFilesName }}.libs.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <title>{% if section != 'index' %}{% block title %}{% endblock %} - {% endif %}{{ projectName }}</title>
@@ -19,10 +19,10 @@
     </div>
     {% block js_libs_config %}
     {% endblock %}
-    <script src="js/{{ projectName }}.libs.js"></script>
+    <script src="js/{{ projectFilesName }}.libs.js"></script>
     {% block js_project_config %}
     {% endblock %}
-    <script src="js/{{ projectName }}.js"></script>
+    <script src="js/{{ projectFilesName }}.js"></script>
     {% block js_inline %}
     {% endblock %}
   </body>

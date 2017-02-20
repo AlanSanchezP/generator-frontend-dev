@@ -3,8 +3,7 @@ var gulp = require('gulp'),
   nunjucksRender = require('gulp-nunjucks-render'),
   data = require('gulp-data'),
   argv = require('yargs').argv,
-  production = argv.production,
-  package = require('../package.json').name;
+  production = argv.production;
 
 gulp.task('build:html', function () {
   var baseDir = production ? config.paths.dist : config.paths.build;
@@ -21,7 +20,8 @@ gulp.task('build:html', function () {
       ext: '.html',
       inheritExtension: false,
       manageEnv: function (environment) {
-        environment.addGlobal('projectName', package);
+        environment.addGlobal('projectName', '<%= projectName %>');
+        environment.addGlobal('projectFilesName', '<%= projectFilesName %>');
       }
     }))
     .pipe(gulp.dest(baseDir.root));
