@@ -92,7 +92,8 @@ module.exports = Generator.extend({
       this.templatePath('gulpconfig.js'),
       this.destinationPath('gulpconfig.js'),
       {
-        filename: filename
+        filename: filename,
+        projectName: this.props.name
       }
     );
     this.fs.copyTpl(
