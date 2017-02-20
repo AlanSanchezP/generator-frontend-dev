@@ -2,7 +2,7 @@ var src = './src',
   dist = './dist',
   build = './build',
   bower = './bower_components',
-  package = require('./package.json').name;
+  package = '<%= filename %>';
 
 module.exports = {
   paths: {
@@ -50,5 +50,8 @@ module.exports = {
     files: function (extension) {
       return package + '.' + extension;
     }
+  },
+  etc: {
+    domain: ''
   }
 };
