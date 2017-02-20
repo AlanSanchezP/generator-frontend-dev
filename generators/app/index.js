@@ -85,20 +85,9 @@ module.exports = Generator.extend({
       this.destinationPath('.jshintrc')
     );
     this.fs.copy(
-      [
-        this.templatePath('gulptasks/*'),
-        '!gulptasks/html.js'
-      ],
+      this.templatePath('gulptasks/*'),
       this.destinationPath('gulptasks/')
     );
-    this.fs.copyTpl(
-      this.templatePath('gulptasks/html.js'),
-      this.destinationPath('gulptasks/html.js'),
-      {
-        projectName: this.props.name,
-        projectFilesName: filename
-      }
-    )
     this.fs.copyTpl(
       this.templatePath('gulpconfig.js'),
       this.destinationPath('gulpconfig.js'),

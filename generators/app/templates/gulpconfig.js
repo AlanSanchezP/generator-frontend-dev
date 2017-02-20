@@ -53,6 +53,7 @@ module.exports = {
   },
   etc: {
     domain: '',
-    projectName: package
+    projectName: '<%= projectName %>',
+    formattedName: package
   }
 };

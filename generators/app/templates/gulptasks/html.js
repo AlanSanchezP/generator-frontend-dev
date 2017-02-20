@@ -20,8 +20,8 @@ gulp.task('build:html', function () {
       ext: '.html',
       inheritExtension: false,
       manageEnv: function (environment) {
-        environment.addGlobal('projectName', '<%= projectName %>');
-        environment.addGlobal('projectFilesName', '<%= projectFilesName %>');
+        environment.addGlobal('projectName', config.etc.projectName);
+        environment.addGlobal('projectFilesName', config.etc.formattedName);
       }
     }))
     .pipe(gulp.dest(baseDir.root));
