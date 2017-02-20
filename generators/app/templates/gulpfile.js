@@ -1,17 +1,29 @@
 var gulp = require('gulp'),
   config = require('./gulpconfig'),
-  requireDir = require('require-dir');
+  requireDir = require('require-dir'),
+  argv = require('yargs').argv,
+  production = argv.production,
+  buildTasks = [
+    'build:bower',
+    'build:styles',
+    'build:scripts',
+    'copy:fonts',
+    'copy:images',
+    'build:html'
+  ],
+  defaultTasks = [
+    'build'
+  ];
 
 requireDir('./gulptasks');
 
-gulp.task('build', [
-  'build:bower',
-  'build:styles',
-  'build:scripts',
-  'copy:fonts',
-  'copy:images'<% if (onlyFrontend) { %>,
-  'build:html'<% } %>
-]);
+if (production) {
+  buildTasks.push('create:cname');
+} else {
+  defaultTasks.push('serve', 'watch');
+}
+
+gulp.task('build', buildTasks);
 
 gulp.task('watch', function () {
   gulp.watch(config.paths.bower(''), ['build:bower']);
@@ -19,9 +31,9 @@ gulp.task('watch', function () {
   gulp.watch(config.paths.src.scripts_all, ['build:scripts']);
   gulp.watch(config.paths.src.fonts, ['copy:fonts']);
   gulp.watch(config.paths.src.img, ['copy:images']);
-  <% if (onlyFrontend) { %>gulp.watch(config.paths.src.templates_all, ['build:html']);<% } %>
+  gulp.watch(config.paths.src.templates_all, ['build:html']);
 });
-<% if (onlyFrontend) { %>
+
 gulp.task('serve', ['server:run', 'server:reload']);
-<% } %>
-gulp.task('default', ['build',<% if (onlyFrontend) { %> 'serve',<% } %> 'watch']);
+
+gulp.task('default', defaultTasks);
