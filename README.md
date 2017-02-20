@@ -57,16 +57,16 @@ Here is a short explanation of each file and directory that is generated (exclud
 * **gulpconfig.js**: Configuration file for paths and other values used in gulptasks.
 * **gulptasks/**:  A folder that contains individual files for each gulptask that is used by the main gulpfile.
 * **src/**: All the code and resources that you will create to your project.
-* **src/templates**: Nunjucks files
-  * **partials/**: subfolder that contains the base layout, as well as navbar and footer files. You can add as many partials you need.
-  * **sections/**: subfolder that contains all the files that are going to be actual sections on your website.
-* **/src/styl**: Just like the templates folder, it's divided in sections and partials subfolders.
-  * **vars.styl**: Contains declaration of variables
-  * **mixins.styl**: Contains declaration of mixins and functions
-  * **fonts.styl**: Declaration of fonts
-  * **utils.styl**: Utility classes that are not directly part of the website's styles.
-  * **base.styl**: Styles shared between all (or most) of sections and that are part of the website's styles. It includes navbar and footer files by default.
-  * **main.styl**: Imports all the other files.
+  * **templates/**: Nunjucks files
+    * **partials/**: subfolder that contains the base layout, as well as navbar and footer files. You can add as many partials you need.
+    * **sections/**: subfolder that contains all the files that are going to be actual sections on your website.
+  * **styl/**: Just like the templates folder, it's divided in sections and partials subfolders.
+    * **vars.styl**: Contains declaration of variables
+    * **mixins.styl**: Contains declaration of mixins and functions
+    * **fonts.styl**: Declaration of fonts
+    * **utils.styl**: Utility classes that are not directly part of the website's styles.
+    * **base.styl**: Styles shared between all (or most) of sections and that are part of the website's styles. It includes navbar and footer files by default.
+    * **main.styl**: Imports all the other files.
 
 ## Stylus utilities
 
@@ -118,9 +118,10 @@ All the tasks, with the only exception of **deploy** can take the --production f
 
 * **default**: Launches build, watch and serve tasks.
 
-**IMPORTANT!!**
+**IMPORTANT!**
 
-build:styles and build:scripts taks will concatenate your files in an alphabetical order.
+* build:styles and build:scripts taks will concatenate your files in an alphabetical order.
+* If you use --production, create:cname will be included into the default task. Otherwise, serve and watch will take its place.
 
 ## Gulpconfig file
 
@@ -185,7 +186,7 @@ If your project was generated as an only-frontend one, this subgenerator won't b
 
 ## Using NVM?
 
-If after installing the generator you are still unable to use it? You may want to see [this issue](https://github.com/yeoman/yo/issues/406) in the yeoman repository. However, you can try to use this fix by editting your .bashrc or .zshrc file.
+If after installing the generator you are still unable to use it? You may want to see [this issue](https://github.com/yeoman/yo/issues/406) in the yeoman repository.
 
 ## Getting To Know Yeoman
 
