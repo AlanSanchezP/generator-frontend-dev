@@ -84,16 +84,13 @@ module.exports = Generator.extend({
       this.templatePath('.jshintrc'),
       this.destinationPath('.jshintrc')
     );
-    this.fs.copy(
-      this.templatePath('gulptasks/*'),
-      this.destinationPath('gulptasks/')
-    );
     this.fs.copyTpl(
       this.templatePath('gulpconfig.js'),
       this.destinationPath('gulpconfig.js'),
       {
         filename: filename,
-        projectName: this.props.name
+        projectName: this.props.name,
+        onlyFrontend: this.props.onlyFrontend
       }
     );
     this.fs.copyTpl(
@@ -123,10 +120,46 @@ module.exports = Generator.extend({
       this.templatePath('styl/**/*'),
       this.destinationPath('src/styl/')
     );
+    this.fs.copy(
+      this.templatePath('gulptasks/bower.js'),
+      this.destinationPath('gulptasks/bower.js')
+    );
+    this.fs.copy(
+      this.templatePath('gulptasks/fonts.js'),
+      this.destinationPath('gulptasks/fonts.js')
+    );
+    this.fs.copy(
+      this.templatePath('gulptasks/images.js'),
+      this.destinationPath('gulptasks/images.js')
+    );
+    this.fs.copy(
+      this.templatePath('gulptasks/scripts.js'),
+      this.destinationPath('gulptasks/scripts.js')
+    );
+    this.fs.copy(
+      this.templatePath('gulptasks/styles.js'),
+      this.destinationPath('gulptasks/styles.js')
+    );
     if (this.props.onlyFrontend) {
       this.fs.copy(
         this.templatePath('nunjucks/**/*'),
         this.destinationPath('src/templates/')
+      );
+      this.fs.copy(
+        this.templatePath('gulptasks/html.js'),
+        this.destinationPath('gulptasks/html.js')
+      );
+      this.fs.copy(
+        this.templatePath('gulptasks/cname.js'),
+        this.destinationPath('gulptasks/cname.js')
+      );
+      this.fs.copy(
+        this.templatePath('gulptasks/ghpages.js'),
+        this.destinationPath('gulptasks/ghpages.js')
+      );
+      this.fs.copy(
+        this.templatePath('gulptasks/server.js'),
+        this.destinationPath('gulptasks/server.js')
       );
     }
   }/*,

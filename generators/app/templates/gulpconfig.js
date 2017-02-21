@@ -15,27 +15,27 @@ module.exports = {
       scripts_main: src + '/js/app.js',
       img: src + '/img/**/*.*',
       favicon: src + '/favicon.ico',
-      fonts: src + '/fonts/**/*.*',
+      fonts: src + '/fonts/**/*.*',<% if (onlyFrontend) { %>
       templates_all: src + '/templates/**/*.njk',
       templates_dir: src + '/templates/',
       templates_partials: src + '/templates/partials/*.njk',
-      templates_sections: src + '/templates/sections/*.njk',
+      templates_sections: src + '/templates/sections/*.njk',<% } %>
       root: src
     },
     build: {
       css: build + '/css/',
       js: build + '/js/',
       img: build + '/img/',
-      fonts: build + '/fonts/',
-      html: build + '/*.html',
+      fonts: build + '/fonts/',<% if (onlyFrontend) { %>
+      html: build + '/*.html',<% } %>
       root: build
     },
     dist: {
       css: dist + '/css/',
       js: dist + '/js/',
       img: dist + '/img/',
-      fonts: dist + '/fonts/',
-      html: dist + '/*.html',
+      fonts: dist + '/fonts/',<% if (onlyFrontend) { %>
+      html: dist + '/*.html',<% } %>
       all: dist + '/**/*',
       root: dist
     },

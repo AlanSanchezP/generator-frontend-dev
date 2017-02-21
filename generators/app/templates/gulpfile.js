@@ -8,8 +8,8 @@ var gulp = require('gulp'),
     'build:styles',
     'build:scripts',
     'copy:fonts',
-    'copy:images',
-    'build:html'
+    'copy:images'<% if (onlyFrontend) { %>,
+    'build:html'<% } %>
   ],
   defaultTasks = [
     'build'
@@ -17,23 +17,25 @@ var gulp = require('gulp'),
 
 requireDir('./gulptasks');
 
-if (production) {
+<% if (onlyFrontend) { %>if (production) {
   buildTasks.push('create:cname');
 } else {
   defaultTasks.push('serve', 'watch');
-}
+}<% } else { %>if (!production) {
+  defaultTasks.push('serve', 'watch');
+}<% } %>
 
 gulp.task('build', buildTasks);
 
 gulp.task('watch', function () {
-  gulp.watch(config.paths.bower(''), ['build:bower', 'server:reload']);
-  gulp.watch([config.paths.src.styles_all, config.paths.src.svg_files], ['build:styles', 'server:reload']);
-  gulp.watch(config.paths.src.scripts_all, ['build:scripts', 'server:reload']);
-  gulp.watch(config.paths.src.fonts, ['copy:fonts', 'server:reload']);
-  gulp.watch(config.paths.src.img, ['copy:images', 'server:reload']);
-  gulp.watch(config.paths.src.templates_all, ['build:html', 'server:reload']);
+  gulp.watch(config.paths.bower(''), ['build:bower'<% if (onlyFrontend) { %>, 'server:reload'<% } %>]);
+  gulp.watch([config.paths.src.styles_all, config.paths.src.svg_files], ['build:styles'<% if (onlyFrontend) { %>, 'server:reload'<% } %>]);
+  gulp.watch(config.paths.src.scripts_all, ['build:scripts'<% if (onlyFrontend) { %>, 'server:reload'<% } %>]);
+  gulp.watch(config.paths.src.fonts, ['copy:fonts'<% if (onlyFrontend) { %>, 'server:reload'<% } %>]);
+  gulp.watch(config.paths.src.img, ['copy:images'<% if (onlyFrontend) { %>, 'server:reload'<% } %>]);<% if (onlyFrontend) { %>
+  gulp.watch(config.paths.src.templates_all, ['build:html', 'server:reload']);<% } %>
 });
 
-gulp.task('serve', ['server:run', 'server:reload']);
+<% if (onlyFrontend) { %>gulp.task('serve', ['server:run', 'server:reload']);<% } %>
 
 gulp.task('default', defaultTasks);
