@@ -1,5 +1,5 @@
 # generator-frontend-dev [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
-> Yeoman generator for frontend development using gulp, stylus, nunjucks and jshint.
+> Yeoman generator for simple frontend development using gulp, stylus, nunjucks and jshint. This generator is designed to be used in small/medium websites that don't require the complexity of any js framework or the usage of ES2015/2016. For bigger projects, you should look for more specific generators.
 
 ## Installation
 
@@ -57,6 +57,8 @@ Here is a short explanation of each file and directory that is generated (exclud
 * **gulpconfig.js**: Configuration file for paths and other values used in gulptasks.
 * **gulptasks/**:  A folder that contains individual files for each gulptask that is used by the main gulpfile.
 * **src/**: All the code and resources that you will create to your project.
+  * **js/**: JS files
+    * **app.js**: JS file where you can set global properties and default values.
   * **templates/**: Nunjucks files
     * **partials/**: subfolder that contains the base layout, as well as navbar and footer files. You can add as many partials you need.
       * **base.njk**: Base template (sections extend it)
@@ -126,7 +128,7 @@ All the tasks, with the only exception of **deploy** can take the --production f
 
 **IMPORTANT!**
 
-* build:styles and build:scripts taks will concatenate your files in an alphabetical order.
+* build:styles and build:scripts taks will concatenate your files in an alphabetical order (try not to create any js file that would be placed before app.js)
 * If you use --production, create:cname will be included into the default task. Otherwise, serve and watch will take its place.
 
 ## Gulpconfig file
