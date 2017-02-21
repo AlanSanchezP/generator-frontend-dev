@@ -59,8 +59,13 @@ Here is a short explanation of each file and directory that is generated (exclud
 * **src/**: All the code and resources that you will create to your project.
   * **templates/**: Nunjucks files
     * **partials/**: subfolder that contains the base layout, as well as navbar and footer files. You can add as many partials you need.
+      * **base.njk**: Base template (sections extend it)
+      * **navbar.njk**: Navigation var. It uses <nav> tag.
+      * **footer.njk**: It uses <footer> tag.
     * **sections/**: subfolder that contains all the files that are going to be actual sections on your website.
-  * **styl/**: Just like the templates folder, it's divided in sections and partials subfolders.
+  * **styl/**: Stylus files
+    * **sections/**
+    * **partials/**
     * **vars.styl**: Contains declaration of variables
     * **mixins.styl**: Contains declaration of mixins and functions
     * **fonts.styl**: Declaration of fonts
@@ -77,9 +82,10 @@ Here is a short explanation of each file and directory that is generated (exclud
   * $baseFontSize: font-size of the whole (desktop) website.
 
 * **mixins.styl**
-  * center-block(): short alias for margin-left: auto; margin-right: auto;
+  * center-block(): Short alias for margin-left: auto; margin-right: auto;
   * remify(pxsize): Transforms a pixel-based size into a rem-based one (depends on $baseFontSize)
-  * simple-border(side, width, color, style [default: solid]): Creates a border. **side** parameter could take the following values: 'top', 'bottom', 'right', 'left', 'topbottom', 'leftright', 'notop', 'nobottom', 'noleft', 'noright', 'all'
+  * simple-border(side, width, color, style [default: solid]): Creates a border.   
+    * **side** parameter could take the following values: 'top', 'bottom', 'right', 'left', 'topbottom', 'leftright', 'notop', 'nobottom', 'noleft', 'noright', 'all'
 
 * **utils.styl**
   * .cover: background-size: cover; background-position: center;
@@ -142,7 +148,7 @@ This is the name that will be used in the package.json and bower.json files. It'
 
 If false, the following gulptasks won't be available:
  * build:html
- * serve (both run and reload)
+ * server (both run and reload)
  * create:cname
  * deploy
 
@@ -150,7 +156,7 @@ Additionally, the whole src/templates directory won't be generated.
 
 > CSS Framework (default: Bootstrap)
 
-CSS Framework that you will use. This helps you by writing the proper bower overrides.
+CSS Framework that you will use. This helps you by writing the proper bower overrides. If you don't choose any framework (=Other), normalize-css will be included instead.
 
 > Use Font Awesome (default: true)
 
@@ -158,7 +164,7 @@ It works just like the css framework option.
 
 ## Section subgenerator
 
-You can create a new section, with its respective nunjucks and styus files, by running
+You can create a new section, with its respective nunjucks and stylus files, by running
 
 ```bash
 yo frontend-dev:section
@@ -182,7 +188,7 @@ yo frontend-dev:section --name='Gallery'
 
 **IMPORTANT!**
 
-If your project was generated as an only-frontend one, this subgenerator won't be useful (the nunjucks template won't be compiled).
+If your project was generated as an only-frontend one, this subgenerator won't be useful (nunjucks templates won't be compiled).
 
 ## Using NVM?
 
