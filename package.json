@@ -1,12 +1,12 @@
 {
   "name": "generator-frontend-dev",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Yeoman generator for frontend development.",
   "homepage": "",
   "author": {
     "name": "Alan Sanchez",
     "email": "sanchezpineda03@gmail.com",
-    "url": ""
+    "url": "https://github.com/AlanSanchezP"
   },
   "files": [
     "generators"
