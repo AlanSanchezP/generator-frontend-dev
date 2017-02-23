@@ -163,9 +163,9 @@ module.exports = Generator.extend({
         this.destinationPath('gulptasks/server.js')
       );
     }
-  }/*,
+  },
 
   install: function () {
     this.installDependencies();
-  }*/
+  }
 });

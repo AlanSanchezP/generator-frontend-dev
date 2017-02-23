@@ -138,7 +138,7 @@ The gulpconfig file manages the paths that gulptasks will use to listen and crea
 * **etc**: Contains all values that are not paths and are needed in any gulptask.
   * **domain**: Custom (and already bought) domain for your gh-page. Its default value is '' (empty string). You can use this value, as well as false, undefined and null, to tell the cname gulptask not to create CNAME file.
   * **projectName**: Value that is used by build:html task to access to the original project name that you passed to the generator options.
-  * **formattedName**: This property is used by nunjucks templates to access to the project's formatted name (lowercased and with all spaces replaced by underscores). However, this property is an alias for the package variable of the gulpconfig file. This means that if you want to change its value you'd rather change the **package**'s value, since **outputs** object also depends on this value.
+  * **formattedName**: This property is used by nunjucks templates to access to the project's formatted name (latinized, lowercased and with all spaces replaced by underscores). However, this property is an alias for the package variable of the gulpconfig file. This means that if you want to change its value you'd rather change the **package**'s value, since **outputs** object also depends on this value.
 
 ## Generator options
 
