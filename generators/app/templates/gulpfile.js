@@ -22,7 +22,7 @@ requireDir('./gulptasks');
 } else {
   defaultTasks.push('serve', 'watch');
 }<% } else { %>if (!production) {
-  defaultTasks.push('serve', 'watch');
+  defaultTasks.push('watch');
 }<% } %>
 
 gulp.task('build', buildTasks);

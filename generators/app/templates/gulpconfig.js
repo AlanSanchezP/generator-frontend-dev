@@ -51,8 +51,8 @@ module.exports = {
       return package + '.' + extension;
     }
   },
-  etc: {
-    domain: '',
+  etc: {<% if (onlyFrontend) { %>
+    domain: '',<% } %>
     projectName: '<%= projectName %>',
     formattedName: package
   }
