@@ -1,7 +1,8 @@
 'use strict';
 var Generator = require('yeoman-generator'),
   chalk = require('chalk'),
-  yosay = require('yosay');
+  yosay = require('yosay'),
+  latinize = require('latinize');
 
 module.exports = Generator.extend({
   prompting: function () {
@@ -51,7 +52,7 @@ module.exports = Generator.extend({
   },
 
   writing: function () {
-    var filename = this.props.name.replace(/ /g, '_').toLowerCase();
+    var filename = latinize(this.props.name).toLowerCase().replace(/ /g, '_');
 
     this.fs.copyTpl(
       this.templatePath('README.md'),
