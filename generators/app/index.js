@@ -60,7 +60,7 @@ module.exports = Generator.extend({
       { name: this.props.name }
     );
     this.fs.copyTpl(
-      this.templatePath('.gitignore'),
+      this.templatePath('gitignore.txt'),
       this.destinationPath('.gitignore'),
       { onlyFrontend: this.props.onlyFrontend }
     );
@@ -82,7 +82,7 @@ module.exports = Generator.extend({
       }
     );
     this.fs.copy(
-      this.templatePath('.jshintrc'),
+      this.templatePath('jshintrc.txt'),
       this.destinationPath('.jshintrc')
     );
     this.fs.copyTpl(
@@ -106,15 +106,15 @@ module.exports = Generator.extend({
       this.destinationPath('src/js/app.js')
     );
     this.fs.copy(
-      this.templatePath('fonts/.gitkeep'),
+      this.templatePath('fonts/gitkeep.txt'),
       this.destinationPath('src/fonts/.gitkeep')
     );
     this.fs.copy(
-      this.templatePath('img/.gitkeep'),
+      this.templatePath('img/gitkeep.txt'),
       this.destinationPath('src/img/.gitkeep')
     );
     this.fs.copy(
-      this.templatePath('svg/.gitkeep'),
+      this.templatePath('svg/gitkeep.txt'),
       this.destinationPath('src/svg/.gitkeep')
     );
     this.fs.copy(
