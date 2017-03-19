@@ -3,7 +3,8 @@ var path = require('path'),
   assert = require('yeoman-assert'),
   helpers = require('yeoman-test'),
   fs = require('fs'),
-  APP_PATH = '../../generators/app',
+  config = require('./config'),
+  APP_PATH = config.appPath,
   TEMPLATES_PATH = APP_PATH + '/test_templates/gulpfile_js';
 
 describe('generator-frontend-dev:app', function () {
