@@ -1,0 +1,42 @@
+{
+  "name": "Test project",
+  "description": "",
+  "authors": [],
+  "license": "ISC",
+  "homepage": "",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.0",
+    "jquery-validation": "jquery-validate#^1.15.1",
+    "pure": "^0.6.2"
+  },
+  "resolutions": {
+    "jquery": "^3.1.0"
+  },
+  "overrides": {
+    "pure": {
+      "main": [
+        "./src/base/base.css",
+        "./src/buttons/css/buttons-core.css",
+        "./src/buttons/css/buttons.css",
+        "./src/forms/css/forms-r.css",
+        "./src/forms/css/forms.css",
+        "./src/grids/css/grids-core.css",
+        "./src/menus/css/menus-core.css",
+        "./src/menus/css/menus-dropdown.css",
+        "./src/menus/css/menus-horizontal.css",
+        "./src/menus/css/menus-scrollable.css",
+        "./src/menus/css/menus-skin.css",
+        "./src/tables/css/tables.css"
+      ]
+    }
+  }
+}
