@@ -22,7 +22,6 @@ describe('generator-frontend-dev:app', function () {
     var filepath = path.join(__dirname, TEMPLATES_PATH + '/only_frontend.js'),
       content = fs.readFileSync(filepath, { encoding: 'UTF-8' });
 
-    assert.file('gulpconfig.js');
     assert.fileContent('gulpconfig.js', content);
   });
 });
@@ -41,7 +40,6 @@ describe('generator-frontend-dev:app', function () {
     var filepath = path.join(__dirname, TEMPLATES_PATH + '/not_only_frontend.js'),
       content = fs.readFileSync(filepath, { encoding: 'UTF-8' });
 
-    assert.file('gulpconfig.js');
     assert.fileContent('gulpconfig.js', content);
   });
 });

@@ -30,7 +30,6 @@ describe('generator-frontend-dev:app', function () {
       JSONContent = null;
     }
 
-    assert.file(['bower.json']);
     assert.jsonFileContent('bower.json', JSONContent);
     assert.noFileContent('bower.json', 'font-awesome');
   });
@@ -58,7 +57,6 @@ describe('generator-frontend-dev:app', function () {
       JSONContent = null;
     }
 
-    assert.file(['bower.json']);
     assert.jsonFileContent('bower.json', JSONContent);
   });
 });
@@ -85,7 +83,6 @@ describe('generator-frontend-dev:app', function () {
       JSONContent = null;
     }
 
-    assert.file(['bower.json']);
     assert.jsonFileContent('bower.json', JSONContent);
     assert.noFileContent('bower.json', 'font-awesome');
   });
@@ -113,7 +110,6 @@ describe('generator-frontend-dev:app', function () {
       JSONContent = null;
     }
 
-    assert.file(['bower.json']);
     assert.jsonFileContent('bower.json', JSONContent);
   });
 });
@@ -140,7 +136,6 @@ describe('generator-frontend-dev:app', function () {
       JSONContent = null;
     }
 
-    assert.file(['bower.json']);
     assert.jsonFileContent('bower.json', JSONContent);
     assert.noFileContent('bower.json', 'font-awesome');
   });
@@ -168,7 +163,6 @@ describe('generator-frontend-dev:app', function () {
       JSONContent = null;
     }
 
-    assert.file(['bower.json']);
     assert.jsonFileContent('bower.json', JSONContent);
   });
 });
@@ -195,7 +189,6 @@ describe('generator-frontend-dev:app', function () {
       JSONContent = null;
     }
 
-    assert.file(['bower.json']);
     assert.jsonFileContent('bower.json', JSONContent);
     assert.noFileContent('bower.json', 'font-awesome');
   });
@@ -223,7 +216,6 @@ describe('generator-frontend-dev:app', function () {
       JSONContent = null;
     }
 
-    assert.file(['bower.json']);
     assert.jsonFileContent('bower.json', JSONContent);
   });
 });

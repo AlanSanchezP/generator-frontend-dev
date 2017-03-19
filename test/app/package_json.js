@@ -28,7 +28,6 @@ describe('generator-frontend-dev:app', function () {
       JSONContent = null;
     }
 
-    assert.file(['package.json']);
     assert.jsonFileContent('package.json', JSONContent);
   });
 });
@@ -53,7 +52,6 @@ describe('generator-frontend-dev:app', function () {
       JSONContent = null;
     }
 
-    assert.file(['package.json']);
     assert.jsonFileContent('package.json', JSONContent);
     assert.noFileContent('package.json', 'nunjucks');
     assert.noFileContent('package.json', 'gulp-gh-pages');
