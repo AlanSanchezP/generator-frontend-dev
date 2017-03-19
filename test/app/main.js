@@ -65,3 +65,26 @@ describe('generator-frontend-dev:app', function () {
     ]);
   });
 });
+
+describe('generator-frontend-dev:app', function () {
+  before(function () {
+    return helpers.run(path.join(__dirname, APP_PATH))
+      .withPrompts({
+        onlyFrontend: false
+      })
+      .toPromise();
+  });
+
+  it('Does not creates additional files for not only-frontend projects', function () {
+    assert.noFile([
+      'src/templates/partials/base.njk',
+      'src/templates/partials/footer.njk',
+      'src/templates/partials/navbar.njk',
+      'src/templates/sections/index.njk',
+      'gulptasks/html.js',
+      'gulptasks/cname.js',
+      'gulptasks/ghpages.js',
+      'gulptasks/server.js'
+    ]);
+  });
+});
