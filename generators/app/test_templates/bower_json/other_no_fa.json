@@ -1,0 +1,25 @@
+{
+  "name": "Test project",
+  "description": "",
+  "authors": [],
+  "license": "ISC",
+  "homepage": "",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.0",
+    "jquery-validation": "jquery-validate#^1.15.1",
+    "normalize-css": "^5.0.0"
+  },
+  "resolutions": {
+    "jquery": "^3.1.0"
+  },
+  "overrides": {}
+}
