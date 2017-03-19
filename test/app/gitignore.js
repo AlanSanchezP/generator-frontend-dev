@@ -25,3 +25,26 @@ describe('generator-frontend-dev:app', function () {
     assert.fileContent('.gitignore', content);
   });
 });
+
+describe('generator-frontend-dev:app', function () {
+  before(function () {
+    return helpers.run(path.join(__dirname, APP_PATH))
+      .withPrompts({
+        name: PROJECT_NAME,
+        onlyFrontend: false
+      })
+      .toPromise();
+  });
+
+  it('Creates .gitignore for not only-frontend projects', function () {
+    var filepath = path.join(__dirname, TEMPLATES_PATH + '/not_only_frontend.txt'),
+      content = fs.readFileSync(filepath, { encoding: 'UTF-8' });
+
+    assert.file('.gitignore');
+    assert.fileContent('.gitignore', content);
+    assert.noFileContent([
+      ['.gitignore', '.publish/'],
+      ['.gitignore', '_templates/']
+    ]);
+  });
+});
