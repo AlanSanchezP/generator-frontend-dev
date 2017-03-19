@@ -4,7 +4,17 @@ var path = require('path'),
   helpers = require('yeoman-test'),
   fs = require('fs'),
   APP_PATH = '../../generators/app',
-  PROJECT_NAME = 'Test project';
+  PROJECT_NAME = 'Test project',
+  ADDITIONAL_TASKS = [
+    'src/templates/partials/base.njk',
+    'src/templates/partials/footer.njk',
+    'src/templates/partials/navbar.njk',
+    'src/templates/sections/index.njk',
+    'gulptasks/html.js',
+    'gulptasks/cname.js',
+    'gulptasks/ghpages.js',
+    'gulptasks/server.js'
+  ];
 
 describe('generator-frontend-dev:app', function () {
   before(function () {
@@ -53,16 +63,7 @@ describe('generator-frontend-dev:app', function () {
   });
 
   it('Creates files for only-frontend projects', function () {
-    assert.file([
-      'src/templates/partials/base.njk',
-      'src/templates/partials/footer.njk',
-      'src/templates/partials/navbar.njk',
-      'src/templates/sections/index.njk',
-      'gulptasks/html.js',
-      'gulptasks/cname.js',
-      'gulptasks/ghpages.js',
-      'gulptasks/server.js'
-    ]);
+    assert.file(ADDITIONAL_TASKS);
   });
 });
 
@@ -76,15 +77,6 @@ describe('generator-frontend-dev:app', function () {
   });
 
   it('Does not creates additional files for not only-frontend projects', function () {
-    assert.noFile([
-      'src/templates/partials/base.njk',
-      'src/templates/partials/footer.njk',
-      'src/templates/partials/navbar.njk',
-      'src/templates/sections/index.njk',
-      'gulptasks/html.js',
-      'gulptasks/cname.js',
-      'gulptasks/ghpages.js',
-      'gulptasks/server.js'
-    ]);
+    assert.noFile(ADDITIONAL_TASKS);
   });
 });
