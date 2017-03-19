@@ -1,0 +1,33 @@
+{
+  "name": "Test project",
+  "description": "",
+  "authors": [],
+  "license": "ISC",
+  "homepage": "",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.0",
+    "jquery-validation": "jquery-validate#^1.15.1",
+    "bootstrap": "^3.3.7"
+  },
+  "resolutions": {
+    "jquery": "^3.1.0"
+  },
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "./dist/css/bootstrap.css",
+        "./dist/js/bootstrap.js",
+        "./dist/fonts/*"
+      ]
+    }
+  }
+}
