@@ -24,9 +24,6 @@ gulp.task('nsp', function (cb) {
 gulp.task('pre-test', function () {
   return gulp.src('generators/**/*.js')
     .pipe(excludeGitignore())
-    .pipe(istanbul({
-      includeUntested: true
-    }))
     .pipe(istanbul.hookRequire());
 });
 
