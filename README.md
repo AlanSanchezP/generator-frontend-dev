@@ -86,6 +86,7 @@ Here is a short explanation of each file and directory that is generated (exclud
 * **mixins.styl**
   * center-block(): Short alias for margin-left: auto; margin-right: auto;
   * remify(pxsize): Transforms a pixel-based size into a rem-based one (depends on $baseFontSize)
+  * rfont-size(baseSize, mediaSize, newSize, useMin [default: false]): Assigns a default font-size and a responsive sized based on the media query with the format '@media screen and (mediaType: mediaSize)', where the value of mediaType depends on the value of useMin (true -> min-width)
   * simple-border(side, width, color, style [default: solid]): Creates a border.   
     * **side** parameter could take the following values: 'top', 'bottom', 'right', 'left', 'topbottom', 'leftright', 'notop', 'nobottom', 'noleft', 'noright', 'all'
 
