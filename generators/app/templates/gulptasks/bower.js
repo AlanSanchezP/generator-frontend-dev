@@ -21,7 +21,7 @@ gulp.task('build:bower', function () {
     ];
 
   gulp.src(bowerFiles('**/*.css'))
-    .pipe(cssconcat(config.outputs.libs('css')))
+    .pipe(cssconcat(config.outputs.libs('css'), {rebaseUrls: false}))
     .pipe(gulpIf(production, cssmin({processImport: false})))
     .pipe(gulp.dest(baseDir.css));
 
