@@ -5,6 +5,17 @@ center-block()
 remify(pxsize)
   return unit(pxsize / $baseFontSize, 'rem')
 
+rfont-size(baseSize, mediaSize, newSize, useMin = false)
+  font-size baseSize
+
+  if useMin
+    $mediaQuery = 'screen and (min-width: ' + mediaSize + ')'
+  else
+    $mediaQuery = 'screen and (max-width: ' + mediaSize + ')'
+
+  @media $mediaQuery
+    font-size newSize
+
 simple-border(side, width, colour, style = solid)
   if side == 'top'
     border-top width style colour
