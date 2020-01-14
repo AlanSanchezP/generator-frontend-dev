@@ -1,3 +1,6 @@
+> # DEPRECATED REPO
+> This repository is now deprecated and not under maintenance, but you can still fork it if you consider it can be useful to create a new similar project.
+
 # generator-frontend-dev [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
 > Yeoman generator for simple frontend development using gulp, stylus, nunjucks and jshint. This generator is designed to be used in small/medium websites that don't require the complexity of any js framework or the usage of ES2015/2016. For bigger projects, you should look for more specific generators.
 
